@@ -19,6 +19,7 @@ public class Main {
         //Collections.sort(AllSt);
         printAll((ArrayList<Student>) AllSt);
         printFaculty((ArrayList<Student>) AllSt);
+        //
 
 
     }
