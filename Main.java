@@ -19,7 +19,9 @@ public class Main {
         //Collections.sort(AllSt);
         printAll((ArrayList<Student>) AllSt);
         printFaculty((ArrayList<Student>) AllSt);
-        //
+        printFacultyAndCourse((ArrayList<Student>)AllSt);
+        printGroup((ArrayList<Student>)AllSt);
+
 
 
     }
@@ -36,26 +38,54 @@ public class Main {
     }
 
     private static void printFaculty(ArrayList<Student> students) {
-        String f = "ТДС";
+        String f = "ТДП";
         Integer c = 1;
 
         System.out.println();
         System.out.printf("%-20s %-20s %-20s %-20s %-20s %-20s %-20s %-20s %-20s %-20s\n",
                 "Id", "Surname", "Name", "Patronymic", "Date", "Address", "PhoneN", "Faculty", "Course", "Group");
         for (Student s : students) {
-             if (f.equals(s.getFaculty())) {
-                 System.out.printf("%-20s %-20s %-20s %-20s %-20s %-20s %-20s %-20s %-20s %-20s\n",
-                         s.getId(), s.getSurname(), s.getName(), s.getPatronymic(), s.getDateOfBirth(), s.getAddress(), s.getPhoneNumber(), s.getFaculty(), s.getCourse(), s.getGroup());
+            if (f.equals(s.getFaculty())) {
+                System.out.printf("%-20s %-20s %-20s %-20s %-20s %-20s %-20s %-20s %-20s %-20s\n",
+                        s.getId(), s.getSurname(), s.getName(), s.getPatronymic(), s.getDateOfBirth(), s.getAddress(), s.getPhoneNumber(), s.getFaculty(), s.getCourse(), s.getGroup());
             }
-
-
-
-
-
 
         }
 
+    }
+    private static void printFacultyAndCourse(ArrayList<Student> students) {
+        String f = "ТДП";
+        Integer c = 1;
 
+        System.out.println();
+        System.out.printf("%-20s %-20s %-20s %-20s %-20s %-20s %-20s %-20s %-20s %-20s\n",
+                "Id", "Surname", "Name", "Patronymic", "Date", "Address", "PhoneN", "Faculty", "Course", "Group");
+        for (Student s : students) {
+            if (f.equals(s.getFaculty())) {
+                if (c.equals(s.getCourse())) {
+                    System.out.printf("%-20s %-20s %-20s %-20s %-20s %-20s %-20s %-20s %-20s %-20s\n",
+                            s.getId(), s.getSurname(), s.getName(), s.getPatronymic(), s.getDateOfBirth(), s.getAddress(), s.getPhoneNumber(), s.getFaculty(), s.getCourse(), s.getGroup());
+                }
+            }
+
+        }
 
     }
+    private static void printGroup(ArrayList<Student> students) {
+        String f = "ТДС";
+        System.out.println();
+        System.out.printf("%-20s %-20s %-20s %-20s %-20s %-20s %-20s %-20s %-20s %-20s\n",
+                "Id", "Surname", "Name", "Patronymic", "Date", "Address", "PhoneN", "Faculty", "Course", "Group");
+        for (Student s : students) {
+            if (f.equals(s.getGroup())) {
+                System.out.printf("%-20s %-20s %-20s %-20s %-20s %-20s %-20s %-20s %-20s %-20s\n",
+                        s.getId(), s.getSurname(), s.getName(), s.getPatronymic(), s.getDateOfBirth(), s.getAddress(), s.getPhoneNumber(), s.getFaculty(), s.getCourse(), s.getGroup());
+            }
+
+        }
+
+    }
+
+
+
 }
